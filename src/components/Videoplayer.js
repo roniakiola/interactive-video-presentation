@@ -5,7 +5,7 @@ const Video = () => {
   return (
     <>
       <ReactPlayer
-        className='videoplayer'
+        className='videplayer'
         width={'800px'}
         height={'800px'}
         controls={true}
