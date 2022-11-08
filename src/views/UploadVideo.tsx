@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const UploadVideo = () => {
   const url = 'http://localhost:3001';
