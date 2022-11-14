@@ -1,11 +1,25 @@
 import { useState } from 'react';
+import { InputField } from '../components/Input';
 
 const UploadVideo = () => {
   const url = 'http://localhost:3001';
 
   const [file, setFile] = useState(null);
-  const [title, setTitle] = useState('');
-  const [desc, setDesc] = useState('');
+  const [data, setData] = useState({
+    title: '',
+    description: '',
+    test: '',
+  });
+
+  const { title, description, test } = data;
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
 
   const onFileChange = (e: any) => {
     setFile(e.target.files[0]);
@@ -15,43 +29,48 @@ const UploadVideo = () => {
     e.preventDefault();
 
     const fd = new FormData();
-    fd.append('title', title);
-    fd.append('description', desc);
+    Object.entries(data).forEach((pair) => {
+      fd.append(pair[0], pair[1]);
+    });
     fd.append('file', file!);
 
     const fetchOptions = {
       method: 'POST',
-      enctype: 'multipart/form-data',
       body: fd,
     };
     const response = await fetch(url + '/upload', fetchOptions);
     const json = await response.json();
     console.log(json);
-    setFile(null);
-    setDesc('');
-    setTitle('');
+    setData({ title: '', description: '', test: '' });
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
+        <InputField
           type='text'
           name='title'
           placeholder='title'
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={handleChange}
           required
-        ></input>
-        <input
+        />
+        <InputField
           type='text'
           name='description'
           placeholder='description'
-          value={desc}
-          onChange={(e) => setDesc(e.target.value)}
+          value={description}
+          onChange={handleChange}
           required
-        ></input>
-        <input type='file' name='file' onChange={onFileChange} required></input>
+        />
+        <InputField type='file' name='file' onChange={onFileChange} />
+        <InputField
+          type='text'
+          name='test'
+          placeholder='test field'
+          value={test}
+          onChange={handleChange}
+        />
         <button type='submit'>Submit</button>
       </form>
     </div>
