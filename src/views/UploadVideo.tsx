@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { InputField } from '../components/Input';
+import '../css/upload.css';
 
 const UploadVideo = () => {
   const url = 'http://localhost:3001';
@@ -46,7 +47,7 @@ const UploadVideo = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className='upload-form' onSubmit={handleSubmit}>
         <InputField
           type='text'
           name='title'
@@ -71,6 +72,12 @@ const UploadVideo = () => {
           value={test}
           onChange={handleChange}
         />
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
         <button type='submit'>Submit</button>
       </form>
     </div>
