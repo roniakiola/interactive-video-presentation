@@ -9,6 +9,10 @@ a {
 li {
   list-style: none;
 }
+.listImage{
+  max-width: 20px;
+  max-height: 20px;
+}
 .navbar {
   height: 64px;
   position: relative;

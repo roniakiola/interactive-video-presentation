@@ -38,8 +38,8 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className='link-item'>
-                <Link className='react-link' to='/videos'>
-                  Videos
+                <Link className='react-link' to='/LoginPage'>
+                  LoginPage
                 </Link>
               </li>
             </ul>
