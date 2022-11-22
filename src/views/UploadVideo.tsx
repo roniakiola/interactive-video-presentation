@@ -9,6 +9,7 @@ const UploadVideo = () => {
     title: string;
     description: string;
     question: string;
+    path?: string;
   }
 
   const [inputData, setData] = useState<DataSet[]>([
@@ -29,7 +30,7 @@ const UploadVideo = () => {
     console.log(data);
   };
 
-  const onFileChange = async (e: any) => {
+  const onFileChange = async (e: any, index: number) => {
     const fdFile = new FormData();
     fdFile.append('file', e.target.files[0]);
 
@@ -38,17 +39,21 @@ const UploadVideo = () => {
       body: fdFile,
     };
     const response = await fetch(url + '/upload', fetchOptions);
-    const json = await response.json();
-    console.log(json);
+    const filePath = await response.json();
+    console.log(filePath);
+    console.log(inputData[index]);
+    //save filepath to right inputData
+    let data = inputData[index];
+    data.path = filePath;
   };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     const fd = new FormData();
-    // Object.entries(data).forEach((pair) => {
-    //   fd.append(pair[0], pair[1] as string);
-    // });
+    inputData.forEach((item) => {
+      fd.append('inputdata', JSON.stringify(item));
+    });
 
     const fetchOptions = {
       method: 'POST',

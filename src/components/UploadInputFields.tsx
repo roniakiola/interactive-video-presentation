@@ -1,6 +1,6 @@
 type InputProps = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void;
-  onFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFileChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void;
   title: string;
   desc: string;
   quest: string;
@@ -53,7 +53,7 @@ export const InputFields = (props: InputProps) => {
             className='input-field'
             type='file'
             name='file'
-            onChange={onFileChange}
+            onChange={(e) => onFileChange(e, index)}
           ></input>
         </label>
       </div>
