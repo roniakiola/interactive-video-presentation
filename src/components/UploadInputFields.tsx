@@ -1,40 +1,13 @@
-import { useState } from 'react';
-
 type InputProps = {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void;
+  onFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  title: string;
+  desc: string;
+  quest: string;
   index: number;
-  url: string;
 };
 export const InputFields = (props: InputProps) => {
-  const { index, url } = props;
-
-  // const [data, setData] = useState({
-  //   title: '',
-  //   description: '',
-  //   question: '',
-  // });
-  // const { title, description, question } = data;
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   setData({
-  //     ...data,
-  //     [name]: value,
-  //   });
-  //   console.log(data);
-  // };
-
-  // const onFileChange = async (e: any) => {
-  //   const fdFile = new FormData();
-  //   fdFile.append('file', e.target.files[0]);
-
-  //   const fetchOptions = {
-  //     method: 'POST',
-  //     body: fdFile,
-  //   };
-  //   const response = await fetch(url + '/upload', fetchOptions);
-  //   const json = await response.json();
-  //   console.log(json);
-  // };
+  const { title, desc, quest, index, onChange, onFileChange } = props;
 
   return (
     <div className='input-container' key={index}>
@@ -45,8 +18,8 @@ export const InputFields = (props: InputProps) => {
             type='text'
             name='title'
             placeholder='title'
+            onChange={(e) => onChange(e, index)}
             value={title}
-            onChange={handleChange}
           ></input>
         </label>
       </div>
@@ -57,8 +30,8 @@ export const InputFields = (props: InputProps) => {
             type='text'
             name='description'
             placeholder='description'
-            value={description}
-            onChange={handleChange}
+            onChange={(e) => onChange(e, index)}
+            value={desc}
           ></input>
         </label>
       </div>
@@ -69,8 +42,8 @@ export const InputFields = (props: InputProps) => {
             type='text'
             name='question'
             placeholder='question'
-            value={question}
-            onChange={handleChange}
+            onChange={(e) => onChange(e, index)}
+            value={quest}
           ></input>
         </label>
       </div>

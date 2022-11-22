@@ -1,27 +1,31 @@
-import { title } from 'process';
 import { useState } from 'react';
-// import { InputField } from '../components/Input';
 import { InputFields } from '../components/UploadInputFields';
 import '../css/upload.css';
 
 const UploadVideo = () => {
   const url = 'http://localhost:3001';
 
-  const [index, setIndex] = useState(1);
+  interface DataSet {
+    title: string;
+    description: string;
+    question: string;
+  }
 
-  const [data, setData] = useState({
-    title: '',
-    description: '',
-    question: '',
-  });
-  const { title, description, question } = data;
+  const [inputData, setData] = useState<DataSet[]>([
+    {
+      title: '',
+      description: '',
+      question: '',
+    },
+  ]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setData({
-      ...data,
-      [name]: value,
-    });
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    let data = [...inputData];
+    data[index][e.target.name as keyof DataSet] = e.target.value;
+    setData(data);
     console.log(data);
   };
 
@@ -55,21 +59,31 @@ const UploadVideo = () => {
     console.log(json);
   };
 
-  const [inputList, setInputList] = useState([
-    <InputFields index={index} url={url} />,
-  ]);
-
   const addInputFields = () => {
-    setIndex((index) => index + 1);
-    console.log(index);
-    setInputList(inputList.concat(<InputFields index={index} url={url} />));
+    let newInputObject = {
+      title: '',
+      description: '',
+      question: '',
+    };
+    setData([...inputData, newInputObject]);
   };
 
   return (
     <div>
       <button onClick={addInputFields}>Add input</button>
       <form className='upload-form' onSubmit={handleSubmit}>
-        {inputList}
+        {inputData.map((obj, index) => {
+          return (
+            <InputFields
+              onChange={handleChange}
+              onFileChange={onFileChange}
+              index={index}
+              title={obj.title}
+              desc={obj.description}
+              quest={obj.question}
+            />
+          );
+        })}
         <button type='submit'>Submit</button>
       </form>
     </div>
