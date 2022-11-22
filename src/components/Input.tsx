@@ -9,14 +9,18 @@ type InputProps = {
 export const InputField = (props: InputProps) => {
   const { type, name, placeholder, value, onChange, required } = props;
   return (
-    <input
-      className='input-field'
-      type={type}
-      name={name}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      required={required ? true : false}
-    ></input>
+    <div className='input-label-container'>
+      <label htmlFor={name}>
+        <input
+          className='input-field'
+          type={type}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          required={required ? true : false}
+        ></input>
+      </label>
+    </div>
   );
 };

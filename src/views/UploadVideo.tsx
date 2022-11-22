@@ -1,18 +1,20 @@
+import { title } from 'process';
 import { useState } from 'react';
-import { InputField } from '../components/Input';
+// import { InputField } from '../components/Input';
+import { InputFields } from '../components/UploadInputFields';
 import '../css/upload.css';
 
 const UploadVideo = () => {
   const url = 'http://localhost:3001';
 
-  const [file, setFile] = useState(null);
+  const [index, setIndex] = useState(1);
+
   const [data, setData] = useState({
     title: '',
     description: '',
-    test: '',
+    question: '',
   });
-
-  const { title, description, test } = data;
+  const { title, description, question } = data;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -20,64 +22,54 @@ const UploadVideo = () => {
       ...data,
       [name]: value,
     });
+    console.log(data);
   };
 
-  const onFileChange = (e: any) => {
-    setFile(e.target.files[0]);
+  const onFileChange = async (e: any) => {
+    const fdFile = new FormData();
+    fdFile.append('file', e.target.files[0]);
+
+    const fetchOptions = {
+      method: 'POST',
+      body: fdFile,
+    };
+    const response = await fetch(url + '/upload', fetchOptions);
+    const json = await response.json();
+    console.log(json);
   };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     const fd = new FormData();
-    Object.entries(data).forEach((pair) => {
-      fd.append(pair[0], pair[1]);
-    });
-    fd.append('file', file!);
+    // Object.entries(data).forEach((pair) => {
+    //   fd.append(pair[0], pair[1] as string);
+    // });
 
     const fetchOptions = {
       method: 'POST',
       body: fd,
     };
-    const response = await fetch(url + '/upload', fetchOptions);
+    const response = await fetch(url + '/upload/formdata', fetchOptions);
     const json = await response.json();
     console.log(json);
-    setData({ title: '', description: '', test: '' });
+  };
+
+  const [inputList, setInputList] = useState([
+    <InputFields index={index} url={url} />,
+  ]);
+
+  const addInputFields = () => {
+    setIndex((index) => index + 1);
+    console.log(index);
+    setInputList(inputList.concat(<InputFields index={index} url={url} />));
   };
 
   return (
     <div>
+      <button onClick={addInputFields}>Add input</button>
       <form className='upload-form' onSubmit={handleSubmit}>
-        <InputField
-          type='text'
-          name='title'
-          placeholder='title'
-          value={title}
-          onChange={handleChange}
-          required
-        />
-        <InputField
-          type='text'
-          name='description'
-          placeholder='description'
-          value={description}
-          onChange={handleChange}
-          required
-        />
-        <InputField type='file' name='file' onChange={onFileChange} />
-        <InputField
-          type='text'
-          name='test'
-          placeholder='test field'
-          value={test}
-          onChange={handleChange}
-        />
-        <select>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
+        {inputList}
         <button type='submit'>Submit</button>
       </form>
     </div>
