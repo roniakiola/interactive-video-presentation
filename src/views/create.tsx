@@ -1,6 +1,15 @@
 import React,{useState, useEffect}  from "react"; 
+import LoginPage from "../Auth/LoginPage";
 const create = () => {
+
+
+  <div>näkyy</div>
  //ekan päivän ne monivalikkokokeilut, ei mitenkään tärkeitä mutta olkoot nyt tässä.
+
+
+
+
+
     return (
       <div className="App">
         <div className="menu-container">
@@ -51,6 +60,7 @@ const create = () => {
 
         </div>
     )
+    
 }
 
   export default create;

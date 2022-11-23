@@ -1,7 +1,7 @@
-import { setDefaultResultOrder } from 'dns';
 import React, { useState } from 'react';
 import { onLogin } from './auth.api';
-import { CorrectPassword, CorrectUsername } from './auth.api';
+import { CorrectPassword, CorrectUsername, CorrectAdminUsername,CorrectAdminPassword } from './auth.api';
+
 
 const LoginPage=()=>{
 
@@ -10,8 +10,7 @@ const LoginPage=()=>{
         password:''
     })
 
-    
-const [error, setError]=useState();
+
 
     const login =async (event: React.FormEvent)=>{ 
         event.preventDefault();
@@ -24,8 +23,14 @@ const [error, setError]=useState();
         
     if(username==CorrectUsername && password==CorrectPassword){ //varmistaa että jos käyttäjä antaa username "kek" ja salasanaksi "lol" niin ohjaa sen hienoon admin näkymään johon ei totaalisesti pääse mitenkään muuten käsiksi
         console.log("hieno")
-        window.location.replace("/create"); //tätä et löydä navbarista
-        
+        window.location.replace("/Viewer"); //tätä et löydä navbarista
+        var loggedinasuser=true
+    }
+
+    if(username==CorrectAdminUsername && password==CorrectAdminPassword){ //varmistaa että jos käyttäjä antaa username "kek" ja salasanaksi "lol" niin ohjaa sen hienoon admin näkymään johon ei totaalisesti pääse mitenkään muuten käsiksi
+        console.log("hienoa, Olet admin")
+        window.location.replace("/upload"); //tätä et löydä navbarista
+        var loggedinasadmin=true
     }
     else(
         alert("Wrong username or password")
@@ -34,13 +39,13 @@ const [error, setError]=useState();
     
 }
     return(
-        <form onSubmit={login}>
-            <label htmlFor='username'>Username</label>
+        <form onSubmit={login} id="loginform">
+            <label id ="UsernameForm" htmlFor='username'>Username</label>
             <input placeholder="Username" value={username} onChange={(event)=>setCredentials({ //tää kysyy käyttäjänimeä
                 username: event.target.value,
                 password
             })} />
-            <label htmlFor='password'>Password</label>
+            <label id ="PasswordForm" htmlFor='password'>Password</label>
             <input placeholder='Password' type="password" value={password} onChange={(event)=>setCredentials({ //tää kysyy salasanan tiedon
                 username,
                 password: event.target.value
@@ -48,9 +53,8 @@ const [error, setError]=useState();
 
             <button type="submit">Login</button>  
             {/* mitä luulet että tekee? */}
-            
         </form>
-    
+        
         )
       
 }

@@ -3,6 +3,9 @@ import { Axios, AxiosRequestConfig } from "axios"
 
 export const CorrectUsername="kek"
 export const CorrectPassword="lol"
+export const CorrectAdminUsername="Admin"
+export const CorrectAdminPassword="admin"
+
 
 export interface Credentials{
     username: string;

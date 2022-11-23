@@ -4,6 +4,9 @@ import Navbar from './components/Nav';
 import Home from './views/Home';
 import Create from './views/create';
 import LoginPage from './Auth/LoginPage';
+import Viewer from './views/Viewer';
+import Player from './components/video';
+import UploadVideo from './views/UploadVideo';
 
 import { useEffect, useState } from 'react';
 
@@ -19,17 +22,22 @@ function App() {
  
   }, [])
   return (
-    <Router>
-      <>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/create' element={<Create />} />
-          <Route path='/LoginPage' element={<LoginPage/>} />
-        </Routes>
-      </>
-    </Router>
+    <>
+      <Router>
+        <>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/create' element={<Create />} />
+            <Route path='/LoginPage' element={<LoginPage/>} />
+            <Route path='/video' element={<Player/>} />
+            <Route path='/upload' element={<UploadVideo />} />
+          </Routes>
+        </>
+      </Router>
+    </>
   );
 }
+
 
 export default App;

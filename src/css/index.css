@@ -2,9 +2,15 @@
   padding: 0;
   margin: 0;
 }
+#logo{
+  height: 64px;
+  width: fit-content;
+  display: flex;
+  position:relative;
+}
 a {
   text-decoration: none;
-  color: red;
+  color: rgb(19, 18, 18);
 }
 li {
   list-style: none;
@@ -13,6 +19,31 @@ li {
   max-width: 20px;
   max-height: 20px;
 }
+.navbarbottom {
+  height: 24px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(92, 79, 73);
+  overflow: hidden;
+
+}
+
+#loginform{
+  top: 200px;
+  left: 45%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+}
+#UsernameForm{
+  text-align: center;
+}
+#PasswordForm{
+  padding-top: 30px;
+  text-align: center;
+}
 .navbar {
   height: 64px;
   position: relative;
@@ -20,7 +51,7 @@ li {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
+  background-color: rgb(235, 235, 233);
 }
 .nav-container {
   width: 100vw;
@@ -29,6 +60,11 @@ li {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+  border-bottom: 2px;
+}
+.link-item:hover {
+  border-bottom:5px solid #fffb26;
 }
 .nav-link-container {
   height: 100%;
@@ -54,7 +90,7 @@ li {
   background-color: rgb(184, 170, 170);
 }
 .menu-bar {
-  background-color: red;
+  background-color: rgb(88, 84, 84);
   margin-bottom: 0.5em;
   height: 0.3em;
   width: 2.5em;
@@ -66,7 +102,7 @@ li {
 .menu {
   width: 100%;
   transition-duration: 500ms;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   overflow: hidden;
 }
 .visible {
@@ -87,7 +123,71 @@ li {
   width: 50%;
   text-align: center;
 }
-.react-link {
+.v-wrapper {
+  width: 65vw;
+  height: min-content;
+  margin: auto;
+}
+.videoplayer {
+  margin: auto;
+  /* padding-top: 56.25%; */
+  position: relative;
+}
+.videoplayer > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+.buttonWrapper {
+  margin: auto;
+  width: 65vw;
+}
+.controls {
+  margin: auto;
+  width: 100%;
+}
+.controls tr {
+  text-align: center;
+}
+.button {
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+  margin: 1px;
+}
+.progressBar {
+  width: 85%;
+}
+.volumeBar {
+  width: 13%;
+}
+.options {
+  /* display: none;  KORJAA/ */
+  display: flex;
+  flex: row;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+.eka {
+  background-color: green;
+}
+.toka {
+  background-color: red;
+}
+#hehe{
+  background-color: #ffffff; /* yellow */
+  border: none;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+}
+#hehe:hover{
+  border:5px solid #868686;
 }
 @media only screen and (min-width: 780px) {
   .nav-container {

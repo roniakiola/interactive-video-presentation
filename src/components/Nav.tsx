@@ -9,9 +9,9 @@ const Navbar = () => {
       <nav className='navbar'>
         <div className='nav-container'>
           <div className='nav-link-container'>
-            <Link className='nav-logo' to='/'>
-              Logo here
-            </Link>
+            <a href='/' >
+              <img src="https://www.vooler.fi/wp-content/uploads/vooler_logo_horizontal.png" id="logo"></img>
+            </a>
             <button
               className='hamburger-menu'
               type='button'
@@ -33,18 +33,22 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className='link-item'>
-                <Link className='react-link' to='/upload'>
-                  Upload
+                <Link className='react-link' to='/LoginPage'>
+                  Login
                 </Link>
               </li>
               <li className='link-item'>
-                <Link className='react-link' to='/LoginPage'>
-                  LoginPage
+                <Link className='react-link' to='/video'>
+                  Viewer
                 </Link>
               </li>
             </ul>
           </div>
         </div>
+      </nav>
+
+      <nav className='navbarbottom'>
+        
       </nav>
     </>
   );
