@@ -2,7 +2,6 @@ import './css/index.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Nav';
 import Home from './views/Home';
-import Player from './components/video';
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
           </Routes>
         </>
       </Router>
-      <Player />
     </>
   );
 }
