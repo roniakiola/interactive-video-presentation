@@ -30,7 +30,7 @@ class Player extends Component<any> {
         loaded: 0,
         duration: 0,
         volume: 0.5,
-        playing: true, // true JOS HALUAA AUTOPLAY KUN VIDEO VAIHTUU
+        playing: false, // true JOS HALUAA AUTOPLAY KUN VIDEO VAIHTUU
       });
   }
 
@@ -72,13 +72,13 @@ class Player extends Component<any> {
     this.setState({ muted: !this.state.muted });
   };
   handleProgress = (state: any) => {
-    console.log('onProgress', state);
+    // console.log('onProgress', state);
     if (!this.state.seeking) {
       this.setState(state);
     }
   };
   handleDuration = (duration: number) => {
-    console.log('onDuration', duration);
+    // console.log('onDuration', duration);
     this.setState({ duration });
   };
   handleEnded = () => {
