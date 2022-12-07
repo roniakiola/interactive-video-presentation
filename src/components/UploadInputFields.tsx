@@ -1,13 +1,31 @@
 type InputProps = {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void;
+  onChange: (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>,
+    index: number
+  ) => void;
   onFileChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void;
   title: string;
   desc: string;
   quest: string;
   index: number;
+  arr: Array<number>;
+  yesVal: number;
+  noVal: number;
 };
 export const InputFields = (props: InputProps) => {
-  const { title, desc, quest, index, onChange, onFileChange } = props;
+  const {
+    title,
+    desc,
+    quest,
+    index,
+    arr,
+    yesVal,
+    noVal,
+    onChange,
+    onFileChange,
+  } = props;
 
   return (
     <div className='input-container' key={index}>
@@ -55,6 +73,30 @@ export const InputFields = (props: InputProps) => {
             name='file'
             onChange={(e) => onFileChange(e, index)}
           ></input>
+        </label>
+        <label htmlFor='yesVal'>
+          <select
+            name='yesVal'
+            id='select_yes'
+            onChange={(e) => onChange(e, index)}
+            value={yesVal}
+          >
+            {arr.map((el) => {
+              return <option>{el + 1}</option>;
+            })}
+          </select>
+        </label>
+        <label htmlFor='noVal'>
+          <select
+            name='noVal'
+            id='select_no'
+            onChange={(e) => onChange(e, index)}
+            value={noVal}
+          >
+            {arr.map((el) => {
+              return <option>{el + 1}</option>;
+            })}
+          </select>
         </label>
       </div>
     </div>

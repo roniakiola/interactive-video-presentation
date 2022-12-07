@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { InputFields } from '../components/UploadInputFields';
 import '../css/upload.css';
 
@@ -10,23 +10,32 @@ const UploadVideo = () => {
     description: string;
     question: string;
     path?: string;
+    yesVal: number;
+    noVal: number;
   }
+
+  const [arr, setArr] = useState<Array<number>>([0]);
 
   const [inputData, setData] = useState<DataSet[]>([
     {
       title: '',
       description: '',
       question: '',
+      yesVal: 1,
+      noVal: 1,
     },
   ]);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLSelectElement>,
     index: number
   ) => {
-    let data = [...inputData];
+    let data: any = [...inputData];
     data[index][e.target.name as keyof DataSet] = e.target.value;
     setData(data);
+    console.log(index, e.target.value);
     console.log(data);
   };
 
@@ -69,9 +78,18 @@ const UploadVideo = () => {
       title: '',
       description: '',
       question: '',
+      yesVal: 1,
+      noVal: 1,
     };
     setData([...inputData, newInputObject]);
+    inputData.forEach((item, index) => {
+      setArr([...arr, index + 1]);
+    });
   };
+
+  useEffect(() => {
+    console.log(arr);
+  }, [arr]);
 
   return (
     <div>
@@ -86,6 +104,9 @@ const UploadVideo = () => {
               title={obj.title}
               desc={obj.description}
               quest={obj.question}
+              yesVal={obj.yesVal}
+              noVal={obj.noVal}
+              arr={arr}
             />
           );
         })}
