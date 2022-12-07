@@ -60,9 +60,7 @@ const UploadVideo = () => {
     e.preventDefault();
 
     const fd = new FormData();
-    inputData.forEach((item) => {
-      fd.append('inputdata', JSON.stringify(item));
-    });
+    fd.append('inputdata', JSON.stringify(inputData));
 
     const fetchOptions = {
       method: 'POST',

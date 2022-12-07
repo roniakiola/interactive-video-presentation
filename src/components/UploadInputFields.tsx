@@ -26,7 +26,7 @@ export const InputFields = (props: InputProps) => {
     onChange,
     onFileChange,
   } = props;
-
+  console.log(arr);
   return (
     <div className='input-container' key={index}>
       <div className='input-label-container'>
