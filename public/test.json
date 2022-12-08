@@ -1,7 +1,7 @@
 [
   {
-    "videoUrl": "Video 0",
-    "videoUrlTitle": "Intro Video",
+    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid1.mp4",
+    "videoUrlTitle": "Video 0",
     "videoUrlDesc": "Video Url Description",
     "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
     "optionsQuestion": "Would you like videos on nature ?",
@@ -20,12 +20,32 @@
     ]
   },
   {
-    "videoUrl": "Video 1",
-    "videoUrlTitle": "Option 1",
+    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+    "videoUrlTitle": "Video 1",
     "videoUrlDesc": "Yes Video Url Description",
     "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
     "optionsQuestion": "Would you like videos on science ?",
     "optionsQuestionImg": "https://science_question.png",
+    "options": [
+      {
+        "title": "Yes ?",
+        "titleImg": "https://yes.png",
+        "value": "2"
+      },
+      {
+        "title": "No ?",
+        "titleImg": "https://no.png",
+        "value": "3"
+      }
+    ]
+  },
+  {
+    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid3.mp4",
+    "videoUrlTitle": "Video 2",
+    "videoUrlDesc": "No Video Url Description",
+    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+    "optionsQuestion": "Would you like videos on birds ?",
+    "optionsQuestionImg": "https://birds_question.png",
     "options": [
       {
         "title": "Yes ?",
@@ -35,13 +55,13 @@
       {
         "title": "No ?",
         "titleImg": "https://no.png",
-        "value": "0"
+        "value": "4"
       }
     ]
   },
   {
-    "videoUrl": "Video 2",
-    "videoUrlTitle": "Option 2",
+    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid4.mp4",
+    "videoUrlTitle": "Video 3",
     "videoUrlDesc": "No Video Url Description",
     "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
     "optionsQuestion": "Would you like videos on birds ?",
@@ -50,38 +70,18 @@
       {
         "title": "Yes ?",
         "titleImg": "https://yes.png",
-        "value": "0"
+        "value": "4"
       },
       {
         "title": "No ?",
         "titleImg": "https://no.png",
-        "value": "1"
+        "value": "5"
       }
     ]
   },
   {
-    "videoUrl": "Video 3",
-    "videoUrlTitle": "Option 3",
-    "videoUrlDesc": "No Video Url Description",
-    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
-    "optionsQuestion": "Would you like videos on birds ?",
-    "optionsQuestionImg": "https://birds_question.png",
-    "options": [
-      {
-        "title": "Yes ?",
-        "titleImg": "https://yes.png",
-        "value": "0"
-      },
-      {
-        "title": "No ?",
-        "titleImg": "https://no.png",
-        "value": "0"
-      }
-    ]
-  },
-  {
-    "videoUrl": "Video 4",
-    "videoUrlTitle": "Option 4",
+    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid5.mp4",
+    "videoUrlTitle": "Video 4",
     "videoUrlDesc": "No Video Url Description",
     "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
     "optionsQuestion": "Would you like videos on birds ?",
@@ -95,14 +95,26 @@
       {
         "title": "No ?",
         "titleImg": "https://no.png",
-        "value": "6"
+        "value": "5"
       }
     ]
   },
   {
-    "videoUrl": "https://end_vdo.mp4",
-    "videoUrlTitle": "end Video",
-    "videoUrlDesc": "end Video Url Description",
-    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video"
+    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid6.mp4",
+    "videoUrlTitle": "Video 5 (Last)",
+    "videoUrlDesc": "End Video Url Description",
+    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+    "options": [
+      {
+        "title": "Yes ?",
+        "titleImg": "https://yes.png",
+        "value": "End"
+      },
+      {
+        "title": "No ?",
+        "titleImg": "https://no.png",
+        "value": "End"
+      }
+    ]
   }
 ]

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
+import Duration from './Duration';
 
 const NewDiv = () => {
   const test = document.getElementById('test');
@@ -30,7 +31,7 @@ class Player extends Component<any> {
         loaded: 0,
         duration: 0,
         volume: 0.5,
-        playing: false, // true JOS HALUAA AUTOPLAY KUN VIDEO VAIHTUU
+        playing: true, // true JOS HALUAA AUTOPLAY KUN VIDEO VAIHTUU
       });
   }
 
@@ -39,6 +40,7 @@ class Player extends Component<any> {
       url,
       played: 0,
       loaded: 0,
+      playing: true,
       pip: false,
     });
   };
@@ -70,6 +72,7 @@ class Player extends Component<any> {
   handleToggleMuted = () => {
     console.log('onToggleMuted', { muted: !this.state.muted });
     this.setState({ muted: !this.state.muted });
+    //volume = 0 : volume = e.target.value
   };
   handleProgress = (state: any) => {
     // console.log('onProgress', state);
@@ -82,13 +85,8 @@ class Player extends Component<any> {
     this.setState({ duration });
   };
   handleEnded = () => {
-    // Aktivoi eri alueella kuin videoplayerissa *TEE*
     console.log('Ended');
     NewDiv();
-    // this.setState({
-    //   url: 'https://users.metropolia.fi/~panurai/Audio Visual/Monirautamiksaus.mp4',
-    // });
-    // this.setState({ playing: true });
   };
   ref = (player: any) => {
     this.player = player;
@@ -104,10 +102,9 @@ class Player extends Component<any> {
       played,
       loop,
       // loaded,
-      // duration,
+      duration,
       playbackRate,
     } = this.state;
-    // const SEPARATOR = ' · ';
 
     return (
       <>
@@ -132,46 +129,58 @@ class Player extends Component<any> {
             onEnded={this.handleEnded}
           ></ReactPlayer>
         </div>
-        <div className='buttonWrapper'>
-          <table className='controls'>
-            <tbody>
-              <tr>
-                <td>
-                  <input
-                    className='progressBar'
-                    type='range'
-                    min={0}
-                    max={0.999999}
-                    step='any'
-                    value={played}
-                    onMouseDown={this.handleSeekMouseDown}
-                    onChange={this.handleSeekChange}
-                    onMouseUp={this.handleSeekMouseUp}
-                  />
-                  <input
-                    className='volumeBar'
-                    type='range'
-                    min={0}
-                    max={1}
-                    step='any'
-                    value={volume}
-                    onChange={this.handleVolumeChange}
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <button className='button' onClick={this.handlePlayPause}>
-                    {playing ? 'Pause' : 'Play'}
-                  </button>
+        <div className='controlsWrapper'>
+          <div className='controls'>
+            <div className='barValue'>
+              <input
+                className='progressBar'
+                type='range'
+                min={0}
+                max={0.999999}
+                step='any'
+                value={played}
+                onMouseDown={this.handleSeekMouseDown}
+                onChange={this.handleSeekChange}
+                onMouseUp={this.handleSeekMouseUp}
+              />
 
-                  <button className='button' onClick={this.handleToggleMuted}>
-                    {muted ? 'Unmute' : 'Mute'}
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              <div className='durationWrapper'>
+                <Duration seconds={duration * played} className={'duration'} />
+                /
+                <Duration seconds={duration} className={'duration'} />
+              </div>
+            </div>
+            <div className='ppmWrapper'>
+              <div className='tyhjä'></div>
+              <div className='playPause'>
+                <button className='button' onClick={this.handlePlayPause}>
+                  {playing ? (
+                    <div className='pauseIcon' />
+                  ) : (
+                    <div className='playIcon' />
+                  )}
+                </button>
+                <button className='button' onClick={this.handleToggleMuted}>
+                  {muted ? (
+                    <div className='volumeIcon' />
+                  ) : (
+                    <div className='muteIcon' />
+                  )}
+                </button>
+              </div>
+              <div className='mute'>
+                <input
+                  className='volumeBar'
+                  type='range'
+                  min={0}
+                  max={1}
+                  step='any'
+                  value={volume}
+                  onChange={this.handleVolumeChange}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </>
     );

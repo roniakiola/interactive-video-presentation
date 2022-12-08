@@ -33,13 +33,13 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className='link-item'>
-                <Link className='react-link' to='/upload'>
-                  Upload
+                <Link className='react-link' to='/videos'>
+                  Videos
                 </Link>
               </li>
               <li className='link-item'>
-                <Link className='react-link' to='/videos'>
-                  Videos
+                <Link className='react-link' to='/upload'>
+                  Upload
                 </Link>
               </li>
             </ul>

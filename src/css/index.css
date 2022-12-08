@@ -2,9 +2,17 @@
   padding: 0;
   margin: 0;
 }
+#root {
+  height: 100vh;
+  --track-height: 100px;
+  --track-color: black;
+}
 a {
   text-decoration: none;
   color: red;
+}
+p {
+  font-size: 1.5rem;
 }
 li {
   list-style: none;
@@ -83,27 +91,19 @@ li {
   width: 50%;
   text-align: center;
 }
-.react-link {
-}
+
 /* Videoplayer CSS */
 .v-wrapper {
-  width: 65vw;
-  height: min-content;
+  width: 70vw;
   margin: auto;
+  padding: 2px;
 }
 .videoplayer {
-  margin: auto;
-  /* padding-top: 56.25%; */
-  position: relative;
+  aspect-ratio: 16/9;
 }
-.videoplayer > div {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.buttonWrapper {
+.controlsWrapper {
   margin: auto;
-  width: 65vw;
+  width: 60vw;
 }
 .controls {
   margin: auto;
@@ -113,32 +113,169 @@ li {
   text-align: center;
 }
 .button {
-  height: 100px;
-  width: 100px;
+  height: 10vh;
+  width: 10vw;
   border-radius: 15px;
   margin: 1px;
 }
-.progressBar {
-  width: 85%;
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
 }
+input[type='range'] {
+  width: 100%;
+  height: var(--track-height);
+  overflow: hidden;
+  cursor: pointer;
+  padding-right: 2px;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  /* width: 100%; */
+  height: var(--track-height);
+  background: gray;
+  /* border: var(--track-color) solid 2px; */
+  padding: 2px;
+}
+input[type='range']::-webkit-slider-thumb {
+  position: relative;
+  height: var(--track-height);
+  width: 5px;
+  margin-left: 2px;
+  margin-top: -3px;
+  background: orange;
+  box-shadow: -100rem 40px 0px 100rem orange;
+}
+
+.progressBar {
+  flex-grow: 1;
+}
+
 .volumeBar {
-  width: 13%;
+  width: 10vw;
+}
+.durationWrapper {
+  border: solid black 1px;
+  padding-left: 2px;
+  width: 8vw;
+  align-self: center;
+  text-align: center;
+}
+.duration {
+  font-weight: bolder;
+  font-size: 2rem;
+}
+.barValue {
+  display: flex;
+  padding: 10px;
+}
+.ppmWrapper {
+  display: flex;
+}
+.tyhjä {
+  width: 33%;
+}
+.playPause {
+  text-align: center;
+  width: 40%;
+  flex-grow: 1;
+}
+.mute {
+  width: 33%;
+  flex-grow: 1;
+  align-self: center;
+  text-align: center;
 }
 /* End */
 /*chooseVid */
 .options {
-  /* display: none;  KORJAA*/
-  display: flex;
-  flex: row;
+  display: none;
+  /* display: flex; */
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 40%;
+  z-index: 10;
+  position: absolute;
   justify-content: center;
   text-align: center;
   padding: 10px;
 }
-.eka {
-  background-color: green;
+.poster {
+  aspect-ratio: 16/9;
+  height: 50%;
+  max-width: 100%;
 }
-.toka {
-  background-color: red;
+.playIcon {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background-image: url(../icons/play.svg);
+}
+.pauseIcon {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background-image: url(../icons/pause.svg);
+}
+.volumeIcon {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background-image: url(../icons/volume.svg);
+}
+.muteIcon {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background-image: url(../icons/mute.svg);
+}
+.urlTitle {
+  padding: 5px;
+  text-decoration: underline;
+}
+.urlDesc {
+  flex-grow: 2;
+  margin: auto;
+}
+.optQ {
+  flex-grow: 1;
+  margin: auto;
+}
+.buttonWrapper {
+  padding: 5px;
+  width: 20vw;
+  height: 5vh;
+}
+.chooseButton {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  font-size: xxx-large;
+  font-weight: bolder;
+}
+.box {
+  height: 60vh;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+  border: black solid 1px;
+  border-radius: 10px;
+  background-color: gray;
+}
+.end {
+  width: 50vw;
+  height: 30vh;
+  border: black solid 1px;
+  background-color: white;
+  text-align: center;
 }
 /* End */
 @media only screen and (min-width: 780px) {
