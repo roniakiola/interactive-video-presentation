@@ -4,8 +4,6 @@
 }
 #root {
   height: 100vh;
-  --track-height: 100px;
-  --track-color: black;
 }
 #logo {
   height: 64px;
