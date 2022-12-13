@@ -10,9 +10,9 @@ type InputProps = {
   desc: string;
   quest: string;
   index: number;
-  arr: Array<number>;
-  yesVal: number;
-  noVal: number;
+  arr: Array<any>;
+  yesVal: string;
+  noVal: string;
 };
 export const InputFields = (props: InputProps) => {
   const {
@@ -26,9 +26,9 @@ export const InputFields = (props: InputProps) => {
     onChange,
     onFileChange,
   } = props;
-  console.log(arr);
+
   return (
-    <div className='input-container' key={index}>
+    <div className='input-container'>
       <div className='input-label-container'>
         <label htmlFor='title'>
           <input
@@ -74,6 +74,8 @@ export const InputFields = (props: InputProps) => {
             onChange={(e) => onFileChange(e, index)}
           ></input>
         </label>
+      </div>
+      <div>
         <label htmlFor='yesVal'>
           <select
             name='yesVal'
@@ -82,7 +84,7 @@ export const InputFields = (props: InputProps) => {
             value={yesVal}
           >
             {arr.map((el) => {
-              return <option>{el + 1}</option>;
+              return <option key={el}>{el}</option>;
             })}
           </select>
         </label>
@@ -94,7 +96,7 @@ export const InputFields = (props: InputProps) => {
             value={noVal}
           >
             {arr.map((el) => {
-              return <option>{el + 1}</option>;
+              return <option key={el}>{el}</option>;
             })}
           </select>
         </label>

@@ -10,19 +10,19 @@ const UploadVideo = () => {
     description: string;
     question: string;
     path?: string;
-    yesVal: number;
-    noVal: number;
+    yesVal: string;
+    noVal: string;
   }
 
-  const [arr, setArr] = useState<Array<number>>([0]);
+  const [arr, setArr] = useState<Array<any>>(['end', 0]);
 
   const [inputData, setData] = useState<DataSet[]>([
     {
       title: '',
       description: '',
       question: '',
-      yesVal: 1,
-      noVal: 1,
+      yesVal: '1',
+      noVal: '1',
     },
   ]);
 
@@ -76,13 +76,21 @@ const UploadVideo = () => {
       title: '',
       description: '',
       question: '',
-      yesVal: 1,
-      noVal: 1,
+      yesVal: '1',
+      noVal: '1',
     };
     setData([...inputData, newInputObject]);
     inputData.forEach((item, index) => {
       setArr([...arr, index + 1]);
     });
+  };
+
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    inputData.pop();
+    arr.pop();
+    setData([...inputData]);
+    console.log(inputData);
   };
 
   useEffect(() => {
@@ -94,20 +102,31 @@ const UploadVideo = () => {
       <button onClick={addInputFields}>Add input</button>
       <form className='upload-form' onSubmit={handleSubmit}>
         {inputData.map((obj, index) => {
+          console.log(index);
           return (
-            <InputFields
-              onChange={handleChange}
-              onFileChange={onFileChange}
-              index={index}
-              title={obj.title}
-              desc={obj.description}
-              quest={obj.question}
-              yesVal={obj.yesVal}
-              noVal={obj.noVal}
-              arr={arr}
-            />
+            <>
+              <InputFields
+                key={index}
+                onChange={handleChange}
+                onFileChange={onFileChange}
+                index={index}
+                title={obj.title}
+                desc={obj.description}
+                quest={obj.question}
+                yesVal={obj.yesVal}
+                noVal={obj.noVal}
+                arr={arr}
+              />
+            </>
           );
         })}
+        <button
+          disabled={inputData.length > 1 ? false : true}
+          type='button'
+          onClick={(e) => handleClick(e)}
+        >
+          Delete
+        </button>
         <button type='submit'>Submit</button>
       </form>
     </div>
