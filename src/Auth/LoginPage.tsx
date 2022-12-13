@@ -19,7 +19,7 @@ const LoginPage = () => {
     if (username == CorrectUsername && password == CorrectPassword) {
       //varmistaa että jos käyttäjä antaa username "kek" ja salasanaksi "lol" niin ohjaa sen hienoon admin näkymään johon ei totaalisesti pääse mitenkään muuten käsiksi
       console.log('hieno');
-      window.location.replace('/Viewer'); //tätä et löydä navbarista
+      window.location.replace('/'); //tätä et löydä navbarista
     }
 
     if (username == CorrectAdminUsername && password == CorrectAdminPassword) {

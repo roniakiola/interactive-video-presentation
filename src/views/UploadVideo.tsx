@@ -101,7 +101,6 @@ const UploadVideo = () => {
 
   return (
     <div>
-      
       <form className='upload-form' onSubmit={handleSubmit}>
         {inputData.map((obj, index) => {
           console.log(index);
@@ -129,14 +128,25 @@ const UploadVideo = () => {
             </>
           );
         })}
-        <div id="buttonsbottom">
-        <button className="UploadpageButton"type='submit'>Submit</button>
-        <button className="UploadpageButton" onClick={addInputFields}>Add input</button>
-        <button className="UploadpageButton"
-          disabled={inputData.length > 1 ? false : true}
-          type='button'
-          onClick={(e) => handleClick(e)}>Delete</button>
-        
+        <div id='buttonsbottom'>
+          <button className='UploadpageButton' type='submit'>
+            Submit
+          </button>
+          <button
+            type='button'
+            className='UploadpageButton'
+            onClick={addInputFields}
+          >
+            Add input
+          </button>
+          <button
+            className='UploadpageButton'
+            disabled={inputData.length > 1 ? false : true}
+            type='button'
+            onClick={(e) => handleClick(e)}
+          >
+            Delete
+          </button>
         </div>
       </form>
     </div>
