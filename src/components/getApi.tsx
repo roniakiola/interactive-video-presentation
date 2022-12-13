@@ -1,22 +1,11 @@
-import axios from 'axios';
-
-const fetchData = (url: string) => {
-  // const url = 'test.json';
-
-  // const url =
-  //   'mongodb+srv://vooler:vooler@cluster0.fnaaudx.mongodb.net/?retryWrites=true&w=majority';
-
-  return axios
-    .get(url)
-    .then(({ data }) => {
-      //Success
-      console.log(data);
-      return data;
-    })
-    .catch((err) => {
-      //Error
-      console.error(err);
-    });
+const fetchData = async (url: string) => {
+  const fetchOptions = {
+    method: 'GET',
+  };
+  const response = await fetch(url + '/upload', fetchOptions);
+  const respo = await response.json();
+  console.log(respo);
+  return respo;
 };
 
 export default fetchData;

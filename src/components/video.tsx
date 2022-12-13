@@ -132,26 +132,25 @@ class Player extends Component<any> {
         <div className='controlsWrapper'>
           <div className='controls'>
             <div className='barValue'>
-              <input
-                className='progressBar'
-                type='range'
-                min={0}
-                max={0.999999}
-                step='any'
-                value={played}
-                onMouseDown={this.handleSeekMouseDown}
-                onChange={this.handleSeekChange}
-                onMouseUp={this.handleSeekMouseUp}
-              />
-
+              <div className='progressBar'>
+                <input
+                  type='range'
+                  min={0}
+                  max={0.999999}
+                  step='any'
+                  value={played}
+                  onMouseDown={this.handleSeekMouseDown}
+                  onChange={this.handleSeekChange}
+                  onMouseUp={this.handleSeekMouseUp}
+                />
+              </div>
               <div className='durationWrapper'>
                 <Duration seconds={duration * played} className={'duration'} />
-                /
+                <p className='slash'>/</p>
                 <Duration seconds={duration} className={'duration'} />
               </div>
             </div>
             <div className='ppmWrapper'>
-              <div className='tyhjä'></div>
               <div className='playPause'>
                 <button className='button' onClick={this.handlePlayPause}>
                   {playing ? (
@@ -162,9 +161,9 @@ class Player extends Component<any> {
                 </button>
                 <button className='button' onClick={this.handleToggleMuted}>
                   {muted ? (
-                    <div className='volumeIcon' />
-                  ) : (
                     <div className='muteIcon' />
+                  ) : (
+                    <div className='volumeIcon' />
                   )}
                 </button>
               </div>

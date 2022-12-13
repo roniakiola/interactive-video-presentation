@@ -18,7 +18,8 @@ const DataTable = () => {
 
   useEffect(() => {
     (async () => {
-      const muuttuja = 'test.json';
+      const muuttuja = 'http://localhost:3001';
+      // 'test.json';
 
       const dataArray = await fetchData(muuttuja);
       console.log(dataArray);

@@ -10,9 +10,10 @@ type InputProps = {
   desc: string;
   quest: string;
   index: number;
-  arr: Array<number>;
-  yesVal: number;
-  noVal: number;
+  arr: Array<any>;
+  yesVal: string;
+  noVal: string;
+  // lastVid: boolean;
 };
 export const InputFields = (props: InputProps) => {
   const {
@@ -25,16 +26,19 @@ export const InputFields = (props: InputProps) => {
     noVal,
     onChange,
     onFileChange,
+    // lastVid,
   } = props;
-  console.log(arr);
+
+  // console.log(lastVid);
+
   return (
-    <div className='input-container' key={index}>
+    <div className='input-container'>
       <div className='input-label-container'>
-        <label htmlFor='title'>
+        <label htmlFor='videoUrlTitle'>
           <input
             className='input-field'
             type='text'
-            name='title'
+            name='videoUrlTitle'
             placeholder='title'
             onChange={(e) => onChange(e, index)}
             value={title}
@@ -42,11 +46,11 @@ export const InputFields = (props: InputProps) => {
         </label>
       </div>
       <div className='input-label-container'>
-        <label htmlFor='description'>
+        <label htmlFor='videoUrlDesc'>
           <input
             className='input-field'
             type='text'
-            name='description'
+            name='videoUrlDesc'
             placeholder='description'
             onChange={(e) => onChange(e, index)}
             value={desc}
@@ -54,11 +58,11 @@ export const InputFields = (props: InputProps) => {
         </label>
       </div>
       <div className='input-label-container'>
-        <label htmlFor='question'>
+        <label htmlFor='optionsQuestion'>
           <input
             className='input-field'
             type='text'
-            name='question'
+            name='optionsQuestion'
             placeholder='question'
             onChange={(e) => onChange(e, index)}
             value={quest}
@@ -74,30 +78,32 @@ export const InputFields = (props: InputProps) => {
             onChange={(e) => onFileChange(e, index)}
           ></input>
         </label>
-        <label htmlFor='yesVal'>
+      </div>
+      <div className='selection-container'>
+        <label htmlFor='yesValue'>
           <select
-            name='yesVal'
+            name='yesValue'
             id='select_yes'
             onChange={(e) => onChange(e, index)}
             value={yesVal}
           >
             {arr.map((el) => {
-              return <option>{el + 1}</option>;
+              return <option key={el}>{el}</option>;
             })}
-            <option value='End'>End</option>
+            <option value='end'>end</option>
           </select>
         </label>
-        <label htmlFor='noVal'>
+        <label htmlFor='noValue'>
           <select
-            name='noVal'
+            name='noValue'
             id='select_no'
             onChange={(e) => onChange(e, index)}
             value={noVal}
           >
             {arr.map((el) => {
-              return <option>{el + 1}</option>;
+              return <option key={el}>{el}</option>;
             })}
-            <option value='End'>End</option>
+            <option value='end'>end</option>
           </select>
         </label>
       </div>

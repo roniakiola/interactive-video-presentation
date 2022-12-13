@@ -3,26 +3,27 @@ import { InputFields } from '../components/UploadInputFields';
 import '../css/upload.css';
 
 const UploadVideo = () => {
-  const url = 'http://localhost:3000';
+  const url = 'http://localhost:3001';
 
   interface DataSet {
-    title: string;
-    description: string;
-    question: string;
-    path?: string;
-    yesVal: any;
-    noVal: any;
+    videoUrlTitle: string;
+    videoUrlDesc: string;
+    optionsQuestion: string;
+    videoUrl: string;
+    yesValue: string;
+    noValue: string;
   }
 
-  const [arr, setArr] = useState<Array<any>>([0]);
+  const [arr, setArr] = useState<Array<any>>(['start']);
 
   const [inputData, setData] = useState<DataSet[]>([
     {
-      title: '',
-      description: '',
-      question: '',
-      yesVal: 1,
-      noVal: 1,
+      videoUrlTitle: '',
+      videoUrlDesc: '',
+      optionsQuestion: '',
+      yesValue: '0',
+      noValue: '0',
+      videoUrl: '',
     },
   ]);
 
@@ -30,7 +31,7 @@ const UploadVideo = () => {
     e:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLSelectElement>,
-    index: any
+    index: number
   ) => {
     let data: any = [...inputData];
     data[index][e.target.name as keyof DataSet] = e.target.value;
@@ -48,12 +49,12 @@ const UploadVideo = () => {
       body: fdFile,
     };
     const response = await fetch(url + '/upload', fetchOptions);
-    const filePath = await response.json();
-    console.log(filePath);
+    const filevideoUrl = await response.json();
+    console.log(filevideoUrl);
     console.log(inputData[index]);
-    //save filepath to right inputData
+    //save filevideoUrl to right inputData
     let data = inputData[index];
-    data.path = filePath;
+    data.videoUrl = filevideoUrl;
   };
 
   const handleSubmit = async (e: any) => {
@@ -73,16 +74,25 @@ const UploadVideo = () => {
 
   const addInputFields = () => {
     let newInputObject = {
-      title: '',
-      description: '',
-      question: '',
-      yesVal: 1,
-      noVal: 1,
+      videoUrlTitle: '',
+      videoUrlDesc: '',
+      optionsQuestion: '',
+      yesValue: '0',
+      noValue: '0',
+      videoUrl: '',
     };
     setData([...inputData, newInputObject]);
     inputData.forEach((item, index) => {
       setArr([...arr, index + 1]);
     });
+  };
+
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    inputData.pop();
+    arr.pop();
+    setData([...inputData]);
+    console.log(inputData);
   };
 
   useEffect(() => {
@@ -94,20 +104,38 @@ const UploadVideo = () => {
       <button onClick={addInputFields}>Add input</button>
       <form className='upload-form' onSubmit={handleSubmit}>
         {inputData.map((obj, index) => {
+          console.log(index);
+          console.log(obj);
+          console.log(inputData.length);
           return (
-            <InputFields
-              onChange={handleChange}
-              onFileChange={onFileChange}
-              index={index}
-              title={obj.title}
-              desc={obj.description}
-              quest={obj.question}
-              yesVal={obj.yesVal}
-              noVal={obj.noVal}
-              arr={arr}
-            />
+            <>
+              <InputFields
+                key={index}
+                onChange={handleChange}
+                onFileChange={onFileChange}
+                index={index}
+                title={obj.videoUrlTitle}
+                desc={obj.videoUrlDesc}
+                quest={obj.optionsQuestion}
+                yesVal={
+                  obj.yesValue === 'start' ? (obj.yesValue = '0') : obj.yesValue
+                }
+                noVal={
+                  obj.noValue === 'start' ? (obj.noValue = '0') : obj.noValue
+                }
+                arr={arr}
+                // lastVid={index === inputData.length - 1 ? true : false}
+              />
+            </>
           );
         })}
+        <button
+          disabled={inputData.length > 1 ? false : true}
+          type='button'
+          onClick={(e) => handleClick(e)}
+        >
+          Delete
+        </button>
         <button type='submit'>Submit</button>
       </form>
     </div>

@@ -3,7 +3,7 @@ import DataTable from '../components/DataTable';
 const Home = () => {
   return (
     <>
-      <h1>Home page</h1>
+      <h1 className='frontpageText'>Home page</h1>
       <DataTable />
     </>
   );
