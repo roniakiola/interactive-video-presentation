@@ -6,7 +6,7 @@
 
 .input-container {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
 }
@@ -19,4 +19,27 @@
   height: 2em;
   width: 40%;
   margin: 5px;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-field {
+  border: 3px;
+  border-radius: 3px;
+  border-color: black;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 2em;
+  width: 40%;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  width: 200px;
+  height: fit-content;
+  padding: 2%;
 }

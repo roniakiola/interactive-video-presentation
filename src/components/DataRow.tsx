@@ -25,7 +25,7 @@ const DataRow = (props: videoProps) => {
       to={'/videos'}
       state={{ file }}
     >
-      {file.file[0].videoUrlDesc}
+      {file.file[0].videoUrlTitle}
     </Link>
   );
 };

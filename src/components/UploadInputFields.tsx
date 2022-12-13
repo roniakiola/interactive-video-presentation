@@ -90,7 +90,7 @@ export const InputFields = (props: InputProps) => {
             {arr.map((el) => {
               return <option key={el}>{el}</option>;
             })}
-            <option value='end'>end</option>
+            <option value='End'>End</option>
           </select>
         </label>
         <label htmlFor='noValue'>
@@ -103,7 +103,7 @@ export const InputFields = (props: InputProps) => {
             {arr.map((el) => {
               return <option key={el}>{el}</option>;
             })}
-            <option value='end'>end</option>
+            <option value='End'>End</option>
           </select>
         </label>
       </div>

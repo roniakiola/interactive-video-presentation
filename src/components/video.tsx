@@ -146,7 +146,7 @@ class Player extends Component<any> {
 
               <div className='durationWrapper'>
                 <Duration seconds={duration * played} className={'duration'} />
-                /
+                <p className='slash'>/</p>
                 <Duration seconds={duration} className={'duration'} />
               </div>
             </div>
@@ -162,9 +162,9 @@ class Player extends Component<any> {
                 </button>
                 <button className='button' onClick={this.handleToggleMuted}>
                   {muted ? (
-                    <div className='volumeIcon' />
-                  ) : (
                     <div className='muteIcon' />
+                  ) : (
+                    <div className='volumeIcon' />
                   )}
                 </button>
               </div>

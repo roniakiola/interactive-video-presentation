@@ -18,9 +18,9 @@ const DataTable = () => {
 
   useEffect(() => {
     (async () => {
-      // const muuttuja = 'http://localhost:3001';
+      const muuttuja = 'http://localhost:3001';
 
-      const dataArray = await fetchFiles();
+      const dataArray = await fetchFiles(muuttuja);
       console.log(dataArray);
       setVideos(dataArray);
     })();

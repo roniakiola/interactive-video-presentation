@@ -14,7 +14,7 @@ const UploadVideo = () => {
     noValue: string;
   }
 
-  const [arr, setArr] = useState<Array<any>>(['start']);
+  const [arr, setArr] = useState<Array<any>>(['Start']);
 
   const [inputData, setData] = useState<DataSet[]>([
     {
@@ -118,10 +118,10 @@ const UploadVideo = () => {
                 desc={obj.videoUrlDesc}
                 quest={obj.optionsQuestion}
                 yesVal={
-                  obj.yesValue === 'start' ? (obj.yesValue = '0') : obj.yesValue
+                  obj.yesValue === 'Start' ? (obj.yesValue = '0') : obj.yesValue
                 }
                 noVal={
-                  obj.noValue === 'start' ? (obj.noValue = '0') : obj.noValue
+                  obj.noValue === 'Start' ? (obj.noValue = '0') : obj.noValue
                 }
                 arr={arr}
                 // lastVid={index === inputData.length - 1 ? true : false}
