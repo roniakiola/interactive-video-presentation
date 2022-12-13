@@ -14,7 +14,7 @@ const UploadVideo = () => {
     noValue: string;
   }
 
-  const [arr, setArr] = useState<Array<any>>(['start', 'end']);
+  const [arr, setArr] = useState<Array<any>>(['start']);
 
   const [inputData, setData] = useState<DataSet[]>([
     {
