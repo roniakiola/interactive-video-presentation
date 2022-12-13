@@ -14,15 +14,15 @@ const UploadVideo = () => {
     noVal: string;
   }
 
-  const [arr, setArr] = useState<Array<any>>(['end', 0]);
+  const [arr, setArr] = useState<Array<any>>(['start', 'end']);
 
   const [inputData, setData] = useState<DataSet[]>([
     {
       title: '',
       description: '',
       question: '',
-      yesVal: '1',
-      noVal: '1',
+      yesVal: '0',
+      noVal: '0',
     },
   ]);
 
@@ -76,8 +76,8 @@ const UploadVideo = () => {
       title: '',
       description: '',
       question: '',
-      yesVal: '1',
-      noVal: '1',
+      yesVal: '0',
+      noVal: '0',
     };
     setData([...inputData, newInputObject]);
     inputData.forEach((item, index) => {
@@ -103,6 +103,8 @@ const UploadVideo = () => {
       <form className='upload-form' onSubmit={handleSubmit}>
         {inputData.map((obj, index) => {
           console.log(index);
+          console.log(obj);
+          console.log(inputData.length);
           return (
             <>
               <InputFields
@@ -113,9 +115,12 @@ const UploadVideo = () => {
                 title={obj.title}
                 desc={obj.description}
                 quest={obj.question}
-                yesVal={obj.yesVal}
-                noVal={obj.noVal}
+                yesVal={
+                  obj.yesVal === 'start' ? (obj.yesVal = '0') : obj.yesVal
+                }
+                noVal={obj.noVal === 'start' ? (obj.noVal = '0') : obj.noVal}
                 arr={arr}
+                lastVid={index === inputData.length - 1 ? true : false}
               />
             </>
           );

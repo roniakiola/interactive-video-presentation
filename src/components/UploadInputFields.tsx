@@ -13,6 +13,7 @@ type InputProps = {
   arr: Array<any>;
   yesVal: string;
   noVal: string;
+  lastVid: boolean;
 };
 export const InputFields = (props: InputProps) => {
   const {
@@ -25,7 +26,10 @@ export const InputFields = (props: InputProps) => {
     noVal,
     onChange,
     onFileChange,
+    lastVid,
   } = props;
+
+  // console.log(lastVid);
 
   return (
     <div className='input-container'>
@@ -75,7 +79,7 @@ export const InputFields = (props: InputProps) => {
           ></input>
         </label>
       </div>
-      <div>
+      <div className='selection-container'>
         <label htmlFor='yesVal'>
           <select
             name='yesVal'
