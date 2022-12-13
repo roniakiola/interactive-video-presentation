@@ -1,8 +1,7 @@
-/* eslint-disable eqeqeq */
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import fetchData from './getApi';
+
 import Player from './video';
 
 interface videoInfo {
@@ -12,18 +11,8 @@ interface videoInfo {
   videoUrlStaticPic: any;
   optionsQuestion: string;
   optionsQuestionImg: any;
-  options: [
-    {
-      title: string;
-      titleImg: any;
-      value: any;
-    },
-    {
-      title: string;
-      titleImg: any;
-      value: any;
-    }
-  ];
+  yesValue: any;
+  noValue: any;
 }
 
 const hideDiv = () => {
@@ -34,29 +23,28 @@ const hideDiv = () => {
 const Choose = () => {
   const location = useLocation();
   console.log('Location:', location);
-  const file = location.state.file;
+  const file = location.state.file.file;
   console.log('File: ', file);
 
-  const [playList, setPlayList] = useState<videoInfo[]>([]);
-  const [url, setUrl] = useState<any>();
+  const [playList] = useState<videoInfo[]>(file);
+  const [url, setUrl] = useState<any>(file[0].videoUrl);
 
   const [currentVid, setCurrentVid] = useState(0);
 
-  const nextOption1 = playList[currentVid]?.options[0].value;
-  const nextOption2 = playList[currentVid]?.options[1].value;
-  useEffect(() => {
-    const muuttuja = 'test.json';
-    fetchData(muuttuja).then((videosData: any) => {
-      setPlayList(videosData);
-      setUrl(videosData[currentVid].videoUrl);
-    });
-  }, [currentVid]);
+  const nextOption1 = playList[currentVid]?.yesValue;
+  const nextOption2 = playList[currentVid]?.noValue;
 
+  console.log('playlist', playList);
   console.log('currentVid: ', currentVid);
   console.log('NextOption1: ', nextOption1);
   console.log('NextOption2: ', nextOption2);
 
   console.log(url);
+
+  // fetchData(muuttuja).then((videosData: any) => {
+  //   setPlayList(videosData);
+  //   setUrl(videosData[currentVid].videoUrl);
+  // });
 
   return (
     <>

@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
+import DataTable from '../components/DataTable';
 
 const Home = () => {
   return (
     <>
       <h1>Home page</h1>
-      <Link to={'/videos'} state={{ videoUrl: 'Asd' }}>
-        Presentaatio 1
-      </Link>
+      <DataTable />
     </>
   );
 };

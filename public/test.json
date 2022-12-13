@@ -1,120 +1,338 @@
 [
-  {
-    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid1.mp4",
-    "videoUrlTitle": "Video 0",
-    "videoUrlDesc": "Video Url Description",
-    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
-    "optionsQuestion": "Would you like videos on nature ?",
-    "optionsQuestionImg": "https://nature_question.png",
-    "options": [
-      {
-        "title": "Yes ?",
-        "titleImg": "https://yes.png",
-        "value": "1"
-      },
-      {
-        "title": "No ?",
-        "titleImg": "https://no.png",
-        "value": "2"
-      }
-    ]
-  },
-  {
-    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
-    "videoUrlTitle": "Video 1",
-    "videoUrlDesc": "Yes Video Url Description",
-    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
-    "optionsQuestion": "Would you like videos on science ?",
-    "optionsQuestionImg": "https://science_question.png",
-    "options": [
-      {
-        "title": "Yes ?",
-        "titleImg": "https://yes.png",
-        "value": "2"
-      },
-      {
-        "title": "No ?",
-        "titleImg": "https://no.png",
-        "value": "3"
-      }
-    ]
-  },
-  {
-    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid3.mp4",
-    "videoUrlTitle": "Video 2",
-    "videoUrlDesc": "No Video Url Description",
-    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
-    "optionsQuestion": "Would you like videos on birds ?",
-    "optionsQuestionImg": "https://birds_question.png",
-    "options": [
-      {
-        "title": "Yes ?",
-        "titleImg": "https://yes.png",
-        "value": "3"
-      },
-      {
-        "title": "No ?",
-        "titleImg": "https://no.png",
-        "value": "4"
-      }
-    ]
-  },
-  {
-    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid4.mp4",
-    "videoUrlTitle": "Video 3",
-    "videoUrlDesc": "No Video Url Description",
-    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
-    "optionsQuestion": "Would you like videos on birds ?",
-    "optionsQuestionImg": "https://birds_question.png",
-    "options": [
-      {
-        "title": "Yes ?",
-        "titleImg": "https://yes.png",
-        "value": "4"
-      },
-      {
-        "title": "No ?",
-        "titleImg": "https://no.png",
-        "value": "5"
-      }
-    ]
-  },
-  {
-    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid5.mp4",
-    "videoUrlTitle": "Video 4",
-    "videoUrlDesc": "No Video Url Description",
-    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
-    "optionsQuestion": "Would you like videos on birds ?",
-    "optionsQuestionImg": "https://birds_question.png",
-    "options": [
-      {
-        "title": "Yes ?",
-        "titleImg": "https://yes.png",
-        "value": "5"
-      },
-      {
-        "title": "No ?",
-        "titleImg": "https://no.png",
-        "value": "5"
-      }
-    ]
-  },
-  {
-    "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid6.mp4",
-    "videoUrlTitle": "Video 5 (Last)",
-    "videoUrlDesc": "End Video Url Description",
-    "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
-    "options": [
-      {
-        "title": "Yes ?",
-        "titleImg": "https://yes.png",
-        "value": "End"
-      },
-      {
-        "title": "No ?",
-        "titleImg": "https://no.png",
-        "value": "End"
-      }
-    ]
-  }
+  [
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid1.mp4",
+      "videoUrlTitle": "Video 0",
+      "videoUrlDesc": "Video Url Description1",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on nature ?",
+      "yesValue": "1",
+      "noValue": "2"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+      "videoUrlTitle": "Video 1",
+      "videoUrlDesc": "Yes Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on science ?",
+      "yesValue": "2",
+      "noValue": "3"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid3.mp4",
+      "videoUrlTitle": "Video 2",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "3",
+      "noValue": "4"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid4.mp4",
+      "videoUrlTitle": "Video 3",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "4",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid5.mp4",
+      "videoUrlTitle": "Video 4",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "5",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid6.mp4",
+      "videoUrlTitle": "Video 5 (Last)",
+      "videoUrlDesc": "End Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Tere tuelemast allinks",
+      "YesValue": "End",
+      "noValue": "End"
+    }
+  ],
+  [
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+      "videoUrlTitle": "Video 0",
+      "videoUrlDesc": "Video Url Description2",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on nature ?",
+      "yesValue": "1",
+      "noValue": "2"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+      "videoUrlTitle": "Video 1",
+      "videoUrlDesc": "Yes Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on science ?",
+      "yesValue": "2",
+      "noValue": "3"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid3.mp4",
+      "videoUrlTitle": "Video 2",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "3",
+      "noValue": "4"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid4.mp4",
+      "videoUrlTitle": "Video 3",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "4",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid5.mp4",
+      "videoUrlTitle": "Video 4",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "5",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid6.mp4",
+      "videoUrlTitle": "Video 5 (Last)",
+      "videoUrlDesc": "End Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Tere tuelemast allinks",
+      "YesValue": "End",
+      "noValue": "End"
+    }
+  ],
+  [
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid1.mp4",
+      "videoUrlTitle": "Video 0",
+      "videoUrlDesc": "Video Url Description3",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on nature ?",
+      "yesValue": "1",
+      "noValue": "2"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+      "videoUrlTitle": "Video 1",
+      "videoUrlDesc": "Yes Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on science ?",
+      "yesValue": "2",
+      "noValue": "3"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid3.mp4",
+      "videoUrlTitle": "Video 2",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "3",
+      "noValue": "4"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid4.mp4",
+      "videoUrlTitle": "Video 3",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "4",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid5.mp4",
+      "videoUrlTitle": "Video 4",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "5",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid6.mp4",
+      "videoUrlTitle": "Video 5 (Last)",
+      "videoUrlDesc": "End Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Tere tuelemast allinks",
+      "YesValue": "End",
+      "noValue": "End"
+    }
+  ],
+  [
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+      "videoUrlTitle": "Video 0",
+      "videoUrlDesc": "Video Url Description4",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on nature ?",
+      "yesValue": "1",
+      "noValue": "2"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+      "videoUrlTitle": "Video 1",
+      "videoUrlDesc": "Yes Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on science ?",
+      "yesValue": "2",
+      "noValue": "3"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid3.mp4",
+      "videoUrlTitle": "Video 2",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "3",
+      "noValue": "4"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid4.mp4",
+      "videoUrlTitle": "Video 3",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "4",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid5.mp4",
+      "videoUrlTitle": "Video 4",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "5",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid6.mp4",
+      "videoUrlTitle": "Video 5 (Last)",
+      "videoUrlDesc": "End Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Tere tuelemast allinks",
+      "YesValue": "End",
+      "noValue": "End"
+    }
+  ],
+  [
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid1.mp4",
+      "videoUrlTitle": "Video 0",
+      "videoUrlDesc": "Video Url Description5",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on nature ?",
+      "yesValue": "1",
+      "noValue": "2"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+      "videoUrlTitle": "Video 1",
+      "videoUrlDesc": "Yes Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on science ?",
+      "yesValue": "2",
+      "noValue": "3"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid3.mp4",
+      "videoUrlTitle": "Video 2",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "3",
+      "noValue": "4"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid4.mp4",
+      "videoUrlTitle": "Video 3",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "4",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid5.mp4",
+      "videoUrlTitle": "Video 4",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "5",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid6.mp4",
+      "videoUrlTitle": "Video 5 (Last)",
+      "videoUrlDesc": "End Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Tere tuelemast allinks",
+      "YesValue": "End",
+      "noValue": "End"
+    }
+  ],
+  [
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+      "videoUrlTitle": "Video 0",
+      "videoUrlDesc": "Video Url Description6",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on nature ?",
+      "yesValue": "1",
+      "noValue": "2"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid2.mp4",
+      "videoUrlTitle": "Video 1",
+      "videoUrlDesc": "Yes Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on science ?",
+      "yesValue": "2",
+      "noValue": "3"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid3.mp4",
+      "videoUrlTitle": "Video 2",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "3",
+      "noValue": "4"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid4.mp4",
+      "videoUrlTitle": "Video 3",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "4",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid5.mp4",
+      "videoUrlTitle": "Video 4",
+      "videoUrlDesc": "No Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Would you like videos on birds ?",
+      "yesValue": "5",
+      "noValue": "5"
+    },
+    {
+      "videoUrl": "https://users.metropolia.fi/~panurai/TempVids/vid6.mp4",
+      "videoUrlTitle": "Video 5 (Last)",
+      "videoUrlDesc": "End Video Url Description",
+      "videoUrlStaticPicture": "Image to show when pausing the video or on the start of the video",
+      "optionsQuestion": "Tere tuelemast allinks",
+      "YesValue": "End",
+      "noValue": "End"
+    }
+  ]
 ]

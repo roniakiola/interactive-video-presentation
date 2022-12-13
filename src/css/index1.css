@@ -7,46 +7,15 @@
   --track-height: 100px;
   --track-color: black;
 }
-#logo {
-  height: 64px;
-  width: fit-content;
-  display: flex;
-  position: relative;
-}
 a {
   text-decoration: none;
-  color: rgb(19, 18, 18);
+  color: red;
+}
+p {
+  font-size: 1.5rem;
 }
 li {
   list-style: none;
-}
-.listImage {
-  max-width: 20px;
-  max-height: 20px;
-}
-.navbarbottom {
-  height: 24px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(92, 79, 73);
-  overflow: hidden;
-}
-
-#loginform {
-  top: 200px;
-  left: 45%;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  font-size: 25px;
-}
-#UsernameForm {
-  text-align: center;
-}
-#PasswordForm {
-  padding-top: 30px;
-  text-align: center;
 }
 .navbar {
   height: 64px;
@@ -55,7 +24,7 @@ li {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(235, 235, 233);
+  background-color: black;
 }
 .nav-container {
   width: 100vw;
@@ -64,11 +33,6 @@ li {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
-  border-bottom: 2px;
-}
-.link-item:hover {
-  border-bottom: 5px solid #fffb26;
 }
 .nav-link-container {
   height: 100%;
@@ -94,7 +58,7 @@ li {
   background-color: rgb(184, 170, 170);
 }
 .menu-bar {
-  background-color: rgb(88, 84, 84);
+  background-color: red;
   margin-bottom: 0.5em;
   height: 0.3em;
   width: 2.5em;
@@ -106,7 +70,7 @@ li {
 .menu {
   width: 100%;
   transition-duration: 500ms;
-  background-color: rgb(255, 255, 255);
+  background-color: black;
   overflow: hidden;
 }
 .visible {
@@ -127,50 +91,7 @@ li {
   width: 50%;
   text-align: center;
 }
-#hehe {
-  background-color: #ffffff; /* yellow */
-  border: none;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  font-size: 16px;
-}
-#hehe:hover {
-  border: 5px solid #868686;
-}
-.frontpageText {
-  margin: 2px;
-  border-radius: 5px;
-  border-color: #fffb26;
-  background-color: rgb(235, 235, 233);
-  display: block;
-  max-width: 50%;
-  margin: auto;
-  text-align: center;
-}
-.presentname {
-  text-align: center;
-}
-@media only screen and (min-width: 780px) {
-  .nav-container {
-    justify-content: space-evenly;
-  }
-  .nav-link-container {
-    width: auto;
-  }
-  .menu {
-    width: auto;
-    height: auto;
-  }
-  .link-list {
-    flex-direction: row;
-  }
-  .hamburger-menu {
-    display: none;
-  }
-}
+
 @media only screen and (min-width: 780px) {
   .nav-container {
     justify-content: space-evenly;
