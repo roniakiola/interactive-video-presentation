@@ -13,7 +13,7 @@ type InputProps = {
   arr: Array<any>;
   yesVal: string;
   noVal: string;
-  lastVid: boolean;
+  // lastVid: boolean;
 };
 export const InputFields = (props: InputProps) => {
   const {
@@ -26,7 +26,7 @@ export const InputFields = (props: InputProps) => {
     noVal,
     onChange,
     onFileChange,
-    lastVid,
+    // lastVid,
   } = props;
 
   // console.log(lastVid);

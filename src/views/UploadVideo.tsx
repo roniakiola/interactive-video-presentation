@@ -6,23 +6,24 @@ const UploadVideo = () => {
   const url = 'http://localhost:3001';
 
   interface DataSet {
-    title: string;
-    description: string;
-    question: string;
-    path?: string;
-    yesVal: string;
-    noVal: string;
+    videoUrlTitle: string;
+    videoUrlDesc: string;
+    optionsQuestion: string;
+    videoUrl: string;
+    yesValue: string;
+    noValue: string;
   }
 
   const [arr, setArr] = useState<Array<any>>(['start', 'end']);
 
   const [inputData, setData] = useState<DataSet[]>([
     {
-      title: '',
-      description: '',
-      question: '',
-      yesVal: '0',
-      noVal: '0',
+      videoUrlTitle: '',
+      videoUrlDesc: '',
+      optionsQuestion: '',
+      yesValue: '0',
+      noValue: '0',
+      videoUrl: '',
     },
   ]);
 
@@ -48,12 +49,12 @@ const UploadVideo = () => {
       body: fdFile,
     };
     const response = await fetch(url + '/upload', fetchOptions);
-    const filePath = await response.json();
-    console.log(filePath);
+    const filevideoUrl = await response.json();
+    console.log(filevideoUrl);
     console.log(inputData[index]);
-    //save filepath to right inputData
+    //save filevideoUrl to right inputData
     let data = inputData[index];
-    data.path = filePath;
+    data.videoUrl = filevideoUrl;
   };
 
   const handleSubmit = async (e: any) => {
@@ -73,11 +74,12 @@ const UploadVideo = () => {
 
   const addInputFields = () => {
     let newInputObject = {
-      title: '',
-      description: '',
-      question: '',
-      yesVal: '0',
-      noVal: '0',
+      videoUrlTitle: '',
+      videoUrlDesc: '',
+      optionsQuestion: '',
+      yesValue: '0',
+      noValue: '0',
+      videoUrl: '',
     };
     setData([...inputData, newInputObject]);
     inputData.forEach((item, index) => {
@@ -112,15 +114,17 @@ const UploadVideo = () => {
                 onChange={handleChange}
                 onFileChange={onFileChange}
                 index={index}
-                title={obj.title}
-                desc={obj.description}
-                quest={obj.question}
+                title={obj.videoUrlTitle}
+                desc={obj.videoUrlDesc}
+                quest={obj.optionsQuestion}
                 yesVal={
-                  obj.yesVal === 'start' ? (obj.yesVal = '0') : obj.yesVal
+                  obj.yesValue === 'start' ? (obj.yesValue = '0') : obj.yesValue
                 }
-                noVal={obj.noVal === 'start' ? (obj.noVal = '0') : obj.noVal}
+                noVal={
+                  obj.noValue === 'start' ? (obj.noValue = '0') : obj.noValue
+                }
                 arr={arr}
-                lastVid={index === inputData.length - 1 ? true : false}
+                // lastVid={index === inputData.length - 1 ? true : false}
               />
             </>
           );
